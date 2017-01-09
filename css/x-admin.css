@@ -127,6 +127,8 @@ xblock{
   border-radius: 50%;
   margin-top: 20px;
 }
+
+input[type="text"]:disabled { background-color: #D2D2D2; } 
 .input{
   padding-top: 40px;
 }

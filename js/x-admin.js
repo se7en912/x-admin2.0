@@ -1,3 +1,21 @@
+function in_array(arr, obj) {
+	  var i = arr.length;
+	  while (i--) {
+	    if (arr[i] === obj) {
+	      return true;
+	    }
+	  }
+	  return false;
+}
+function get_index(arr, obj) {
+	  var i = arr.length;
+	  while (i--) {
+	    if (arr[i] === obj) {
+	      return i;
+	    }
+	  }
+	  return false;
+}
 layui.use(['element'], function(){
 	$ = layui.jquery;
   	element = layui.element(); 
@@ -13,6 +31,13 @@ layui.use(['element'], function(){
 	height = $('.layui-layout-admin .site-demo').height();
 	$('.layui-layout-admin .site-demo').height(height-100);
 
+	navArr =["我的桌面"];
+
+	$('.layui-tab-title li').on("mouseover",'.layui-tab-close"', function(){
+		// alert($(this).parent().index());
+		alert(777)
+	});
+	// alert(7777)
 
   	//监听导航点击
   	element.on('nav(side)', function(elem){
@@ -20,17 +45,22 @@ layui.use(['element'], function(){
     	url = elem.find('a').attr('_href');
     	// alert(url);
 
+    	for (var i = 0; i <$('.x-iframe').length; i++) {
+    		if($('.x-iframe').eq(i).attr('src')==url){
+    			element.tabChange('x-tab', i);
+    			return;
+    		}
+    	};
+
     	res = element.tabAdd('x-tab', {
 	        title: title//用于演示
 	        ,content: '<iframe frameborder="0" src="'+url+'" class="x-iframe"></iframe>'
-	    });
+		    });
 
-	    element.tabChange('x-tab', $('.layui-tab-title li').length-1);
 
-	    $('.layui-tab-title li').eq(0).find('i').remove();
-	    //切换到第2项（注意序号是从0开始计算）
-    	
-    	// $('.x-admin-title').append("<li class='layui-this'>"+title+"<i class='layui-icon layui-unselect layui-tab-close'>ဆ</i></li>")
+		element.tabChange('x-tab', $('.layui-tab-title li').length-1);
+
+    	$('.layui-tab-title li').eq(0).find('i').remove();
   });
 });
 

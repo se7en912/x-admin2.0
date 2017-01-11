@@ -84,7 +84,7 @@
               layui.upload({
                 url: './upload.json' //上传接口
                 ,success: function(res){ //上传成功后的回调
-
+                    console.log(res);
                   $('#LAY_demo_upload').attr('src',res.url);
                 }
               });

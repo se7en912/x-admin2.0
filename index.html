@@ -31,16 +31,16 @@
                           <dd><a href="./login.html">退出</a></dd>
                         </dl>
                       </li>
-                      <li class="layui-nav-item">
+                      <!-- <li class="layui-nav-item">
                         <a href="" title="消息">
                             <i class="layui-icon" style="top: 1px;">&#xe63a;</i>
                         </a>
-                        </li>
-                      <li class="layui-nav-item"><a href="/">前台首页</a></li>
+                        </li> -->
+                      <li class="layui-nav-item x-index"><a href="/">前台首页</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="layui-side layui-bg-black">
+            <div class="layui-side layui-bg-black x-side">
                 <div class="layui-side-scroll">
                     <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
                         <li class="layui-nav-item">
@@ -320,8 +320,10 @@
                         </li>
                     </ul>
                 </div>
+
             </div>
-            <div class="layui-tab layui-tab-card site-demo-title" lay-filter="x-tab" lay-allowclose="true">
+            <div class="layui-tab layui-tab-card site-demo-title x-main" lay-filter="x-tab" lay-allowclose="true">
+                <div class="x-slide_left"></div>
                 <ul class="layui-tab-title">
                     <li class="layui-this">
                         我的桌面
@@ -333,11 +335,6 @@
                         <iframe frameborder="0" src="./welcome.html" class="x-iframe"></iframe>
                     </div>
                 </div>
-            </div>
-            <div class="site-tree-mobile layui-hide">
-                <i class="layui-icon">
-                    &#xe602;
-                </i>
             </div>
             <div class="site-mobile-shade">
             </div>

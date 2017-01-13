@@ -1,21 +1,3 @@
-function in_array(arr, obj) {
-	  var i = arr.length;
-	  while (i--) {
-	    if (arr[i] === obj) {
-	      return true;
-	    }
-	  }
-	  return false;
-}
-function get_index(arr, obj) {
-	  var i = arr.length;
-	  while (i--) {
-	    if (arr[i] === obj) {
-	      return i;
-	    }
-	  }
-	  return false;
-}
 layui.use(['element'], function(){
 	$ = layui.jquery;
   	element = layui.element(); 
@@ -31,13 +13,26 @@ layui.use(['element'], function(){
 	height = $('.layui-layout-admin .site-demo').height();
 	$('.layui-layout-admin .site-demo').height(height-100);
 
-	navArr =["我的桌面"];
-
-	$('.layui-tab-title li').on("mouseover",'.layui-tab-close"', function(){
-		// alert($(this).parent().index());
-		alert(777)
+	if($(window).width()<750){
+		trun = 0;
+		$('.x-slide_left').css('background-position','0px -61px');
+	}else{
+		trun = 1;
+	}
+	$('.x-slide_left').click(function(event) {
+		if(trun){
+			$('.x-side').animate({left: '-200px'},200).siblings('.x-main').animate({left: '0px'},200);
+			$(this).css('background-position','0px -61px');
+			trun=0;
+		}else{
+			$('.x-side').animate({left: '0px'},200).siblings('.x-main').animate({left: '200px'},200);
+			$(this).css('background-position','0px 0px');
+			trun=1;
+		}
+		
 	});
-	// alert(7777)
+
+
 
   	//监听导航点击
   	element.on('nav(side)', function(elem){

@@ -1,354 +1,414 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            X-admin v1.0
-        </title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="format-detection" content="telephone=no">
-        <link rel="stylesheet" href="./css/x-admin.css" media="all">
-    </head>
-    <body>
-        <div class="layui-layout layui-layout-admin">
-            <div class="layui-header header header-demo">
-                <div class="layui-main">
-                    <a class="logo" href="./index.html">
-                        X-admin v1.0
-                    </a>
-                    <ul class="layui-nav" lay-filter="">
-                      <li class="layui-nav-item"><img src="./images/logo.png" class="layui-circle" style="border: 2px solid #A9B7B7;" width="35px" alt=""></li>
-                      <li class="layui-nav-item">
-                        <a href="javascript:;">admin</a>
-                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                          <dd><a href="">个人信息</a></dd>
-                          <dd><a href="">切换帐号</a></dd>
-                          <dd><a href="./login.html">退出</a></dd>
-                        </dl>
-                      </li>
-                      <!-- <li class="layui-nav-item">
-                        <a href="" title="消息">
-                            <i class="layui-icon" style="top: 1px;">&#xe63a;</i>
-                        </a>
-                        </li> -->
-                      <li class="layui-nav-item x-index"><a href="/">前台首页</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="layui-side layui-bg-black x-side">
-                <div class="layui-side-scroll">
-                    <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe607;</i><cite>问题管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./question-list.html">
-                                            <cite>问题列表</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./question-del.html">
-                                            <cite>删除问题</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe62d;</i><cite>产品管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./welcome.html">
-                                            <cite>产品列表（待开发）</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./welcome.html">
-                                            <cite>品牌管理（待开发）</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./welcome.html">
-                                            <cite>类型管理（待开发）</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./welcome.html">
-                                            <cite>类型属性（待开发）</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./category.html">
-                                            <cite>产品分类</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe634;</i><cite>轮播管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./banner-list.html">
-                                            <cite>轮播列表</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe642;</i><cite>订单管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <dd class="">
-                                        <a href="javascript:;" _href="./welcome.html">
-                                            <cite>订单列表（待开发）</cite>
-                                        </a>
-                                    </dd>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe630;</i><cite>分类管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="./category.html">
-                                        <cite>分类列表</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe606;</i><cite>评论管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="./comment-list.html">
-                                        <cite>评论列表</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./feedback-list.html">
-                                        <cite>意见反馈</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe612;</i><cite>会员管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="member-list.html">
-                                        <cite>会员列表</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./member-del.html">
-                                        <cite>删除会员</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./member-level.html">
-                                        <cite>等级管理</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./member-kiss.html">
-                                        <cite>积分管理</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./member-view.html">
-                                        <cite>浏览记录</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./member-view.html">
-                                        <cite>分享记录</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe613;</i><cite>管理员管理</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="./admin-list.html">
-                                        <cite>管理员列表</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./admin-role.html">
-                                        <cite>角色管理</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./admin-cate.html">
-                                        <cite>权限分类</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./admin-rule.html">
-                                        <cite>权限管理</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>系统统计</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts1.html">
-                                        <cite>拆线图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts2.html">
-                                        <cite>柱状图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts3.html">
-                                        <cite>地图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts4.html">
-                                        <cite>饼图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts5.html">
-                                        <cite>雷达图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts6.html">
-                                        <cite>k线图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts7.html">
-                                        <cite>热力图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./echarts8.html">
-                                        <cite>仪表图</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="http://echarts.baidu.com/examples.html" target="_blank" _href="./welcome.html">
-                                        <cite>更多案例</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a class="javascript:;" href="javascript:;">
-                                <i class="layui-icon" style="top: 3px;">&#xe614;</i><cite>系统设置</cite>
-                            </a>
-                            <dl class="layui-nav-child">
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-set.html">
-                                        <cite>系统设置</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-data.html">
-                                        <cite>数字字典</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-shield.html">
-                                        <cite>屏蔽词</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-log.html">
-                                        <cite>系统日志</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-link.html">
-                                        <cite>友情链接</cite>
-                                    </a>
-                                </dd>
-                                <dd class="">
-                                    <a href="javascript:;" _href="./sys-qq.html">
-                                        <cite>第三方登录</cite>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item" style="height: 30px; text-align: center">
-                        </li>
-                    </ul>
-                </div>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台登录-X-admin1.1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+	<link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
 
-            </div>
-            <div class="layui-tab layui-tab-card site-demo-title x-main" lay-filter="x-tab" lay-allowclose="true">
-                <div class="x-slide_left"></div>
-                <ul class="layui-tab-title">
-                    <li class="layui-this">
-                        我的桌面
-                        <i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
-                    </li>
-                </ul>
-                <div class="layui-tab-content site-demo site-demo-body">
-                    <div class="layui-tab-item layui-show">
-                        <iframe frameborder="0" src="./welcome.html" class="x-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="site-mobile-shade">
+</head>
+<body>
+    <!-- 顶部开始 -->
+    <div class="container">
+        <div class="logo"><a href="./index.html">X-ADMIN V1.1</a></div>
+        <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
+        <ul class="layui-nav right" lay-filter="">
+          <li class="layui-nav-item">
+            <a href="javascript:;">admin</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+              <dd><a href="">个人信息</a></dd>
+              <dd><a href="">切换帐号</a></dd>
+              <dd><a href="./login.html">退出</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="/">前台首页</a></li>
+        </ul>
+    </div>
+    <!-- 顶部结束 -->
+    <!-- 中部开始 -->
+    <div class="wrapper">
+        <!-- 左侧菜单开始 -->
+        <div class="left-nav">
+          <div id="side-nav">
+            <ul id="nav">
+                <li class="list" current>
+                    <a href="./index.html">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        会员管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="member-list.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="member-del.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员删除
+                            </a>
+                        </li>
+                        <li>
+                            <a href="member-level.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                等级管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="member-kiss.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                积分管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="member-view.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                浏览记录
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+                        分类管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="./category.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                分类列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+                        轮播管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu" style="display:none">
+                        <li>
+                            <a href="./banner-list.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                轮播列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+                        管理员管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu" style="display:none">
+                        <li>
+                            <a href="./banner-list.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                轮播列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+                        系统统计
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu" style="display:none">
+                        <li>
+                            <a href="./echarts1.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                拆线图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./echarts2.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                柱状图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./echarts3.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                地图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./echarts4.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                饼图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./echarts5.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                k线图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./echarts6.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                仪表图
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://echarts.baidu.com/examples.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                更多案例
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+                        系统设置
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu" style="display:none">
+                        <li>
+                            <a href="./banner-list.html">
+                                <i class="iconfont">&#xe6a7;</i>
+                                轮播列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 左侧菜单结束 -->
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <blockquote class="layui-elem-quote">
+                注意：x-admin 1.1每个页面都可以独立设置一个背景主题，如果每个都设置会比较消耗本地的存储，如果想全部恢复，请重置。
+            </blockquote>
+            <blockquote class="layui-elem-quote">
+                欢迎使用x-admin 后台模版！<span class="f-14">v1.0</span>官方交流群： 519492808
+            </blockquote>
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">信息统计</a></legend>
+            </fieldset>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>统计</th>
+                        <th>资讯库</th>
+                        <th>图片库</th>
+                        <th>产品库</th>
+                        <th>用户</th>
+                        <th>管理员</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>总数</td>
+                        <td>92</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>今日</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>昨日</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>本周</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>本月</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th colspan="2" scope="col">服务器信息</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th width="30%">服务器计算机名</th>
+                        <td><span id="lbServerName">http://127.0.0.1/</span></td>
+                    </tr>
+                    <tr>
+                        <td>服务器IP地址</td>
+                        <td>192.168.1.1</td>
+                    </tr>
+                    <tr>
+                        <td>服务器域名</td>
+                        <td>x.xuebingsi.com</td>
+                    </tr>
+                    <tr>
+                        <td>服务器端口 </td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>服务器IIS版本 </td>
+                        <td>Microsoft-IIS/6.0</td>
+                    </tr>
+                    <tr>
+                        <td>本文件所在文件夹 </td>
+                        <td>D:\WebSite\HanXiPuTai.com\XinYiCMS.Web\</td>
+                    </tr>
+                    <tr>
+                        <td>服务器操作系统 </td>
+                        <td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+                    </tr>
+                    <tr>
+                        <td>系统所在文件夹 </td>
+                        <td>C:\WINDOWS\system32</td>
+                    </tr>
+                    <tr>
+                        <td>服务器脚本超时时间 </td>
+                        <td>30000秒</td>
+                    </tr>
+                    <tr>
+                        <td>服务器的语言种类 </td>
+                        <td>Chinese (People's Republic of China)</td>
+                    </tr>
+                    <tr>
+                        <td>.NET Framework 版本 </td>
+                        <td>2.050727.3655</td>
+                    </tr>
+                    <tr>
+                        <td>服务器当前时间 </td>
+                        <td>2017-01-01 12:06:23</td>
+                    </tr>
+                    <tr>
+                        <td>服务器IE版本 </td>
+                        <td>6.0000</td>
+                    </tr>
+                    <tr>
+                        <td>服务器上次启动到现在已运行 </td>
+                        <td>7210分钟</td>
+                    </tr>
+                    <tr>
+                        <td>逻辑驱动器 </td>
+                        <td>C:\D:\</td>
+                    </tr>
+                    <tr>
+                        <td>CPU 总数 </td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>CPU 类型 </td>
+                        <td>x86 Family 6 Model 42 Stepping 1, GenuineIntel</td>
+                    </tr>
+                    <tr>
+                        <td>虚拟内存 </td>
+                        <td>52480M</td>
+                    </tr>
+                    <tr>
+                        <td>当前程序占用内存 </td>
+                        <td>3.29M</td>
+                    </tr>
+                    <tr>
+                        <td>Asp.net所占内存 </td>
+                        <td>51.46M</td>
+                    </tr>
+                    <tr>
+                        <td>当前Session数量 </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>当前SessionID </td>
+                        <td>gznhpwmp34004345jz2q3l45</td>
+                    </tr>
+                    <tr>
+                        <td>当前系统用户名 </td>
+                        <td>NETWORK SERVICE</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>  
+    </div>
+    <!-- 底部结束 -->
+    <!-- 背景切换开始 -->
+	<div class="bg-changer">
+        <div class="swiper-container changer-list">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="item" src="./images/a.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/b.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/c.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/d.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/e.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/f.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/g.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/h.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/i.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/j.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="./images/k.jpg" alt=""></div>
+                <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>
-        <script src="./lib/layui/layui.js" charset="utf-8"></script>
-        <script src="./js/x-admin.js"></script>
-        <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-    </body>
+        <div class="bg-out"></div>
+        <div id="changer-set"><i class="iconfont">&#xe696;</i></div>   
+    </div>
+    <!-- 背景切换结束 -->
+    <script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
 </html>

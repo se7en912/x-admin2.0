@@ -143,11 +143,12 @@ xblock{
   float: right;
 }
 .x-so{
-	text-align: center;
+	/*text-align: center;*/
+    /*background: #f2f2f2 url() 0 0 no-repeat;*/
 	margin-bottom: 20px;
 }
 .x-so input.layui-input{
-	width: 190px;
+	width: 150px;
 }
 .x-so .layui-form-label{
 	display: inline-block;
@@ -378,6 +379,12 @@ xblock{
 	background: #EFEEF0 url() 0 0 no-repeat;
 	position: relative;
 	z-index: 100;
+}
+.page-content .layui-tab-title li.home i{
+    padding-right: 5px;
+}
+.page-content .layui-tab-title li.home .layui-tab-close{
+    display: none;
 }
 .page-content .layui-tab-title li{
 	line-height: 35px;

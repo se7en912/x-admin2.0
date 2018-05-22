@@ -86,6 +86,26 @@ $(function () {
         $('.layui-tab-title li').eq(0).find('i').remove();
     });
 
+   $("tbody tr[fid!='0']").hide();
+    // 栏目多级显示效果
+    $('.x-show').click(function () {
+        if($(this).attr('status')=='true'){
+            $(this).html('&#xe625;'); 
+            $(this).attr('status','false');
+            cateId = $(this).parents('tr').attr('cate-id');
+            $("tbody tr[fid="+cateId+"]").show();
+       }else{
+            cateIds = [];
+            $(this).html('&#xe623;');
+            $(this).attr('status','true');
+            cateId = $(this).parents('tr').attr('cate-id');
+            getCateId(cateId);
+            for (var i in cateIds) {
+                $("tbody tr[cate-id="+cateIds[i]+"]").hide().find('.x-show').html('&#xe623;').attr('status','true');
+            }
+       }
+    })
+
     //左侧菜单效果
     // $('#content').bind("click",function(event){
     $('.left-nav #nav li').click(function (event) {
@@ -127,6 +147,15 @@ $(function () {
     })
     
 })
+var cateIds = [];
+function getCateId(cateId) {
+    
+    $("tbody tr[fid="+cateId+"]").each(function(index, el) {
+        id = $(el).attr('cate-id');
+        cateIds.push(id);
+        getCateId(id);
+    });
+}
 
 /*弹出层*/
 /*

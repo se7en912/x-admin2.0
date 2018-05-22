@@ -164,9 +164,19 @@ xblock{
 .x-a:hover{
     color: #127F74;
 }
+.x-sort{
+    height: 30px;
+}
+.x-show{
+    cursor: pointer;
+}
+.layui-form-switch{
+    margin-top: 0px;
+}
 .layui-input:focus, .layui-textarea:focus {
     border-color: #189f92!important;
 }
+
 .page{
     margin-top: 20px;
     text-align: center;

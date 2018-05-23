@@ -86,7 +86,7 @@ $(function () {
         $('.layui-tab-title li').eq(0).find('i').remove();
     });
 
-   $("tbody tr[fid!='0']").hide();
+   $("tbody.x-cate tr[fid!='0']").hide();
     // 栏目多级显示效果
     $('.x-show').click(function () {
         if($(this).attr('status')=='true'){

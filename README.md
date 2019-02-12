@@ -10,7 +10,6 @@ X-admin遵循Apache2开源协议发布。Apache Licence是著名的非盈利开�
 
 http://x.xuebingsi.com
 
-交流QQ群：519492808
 
 ## 2018-04-25更新
 
